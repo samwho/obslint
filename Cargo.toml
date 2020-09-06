@@ -1,0 +1,22 @@
+[package]
+name = "obslint"
+version = "0.1.0"
+authors = ["Sam Rose <hello@samwho.dev>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pulldown-cmark = "0.8"
+walkdir = "2"
+rayon = "1"
+structopt = { version = "0.3", default-features = false, features = ["paw"] }
+paw = "1"
+async-std = { version = "1", features = ["attributes"] }
+anyhow = "1"
+futures = "0.3"
+aho-corasick = "0.7"
+colored = "2"
+
+[dev-dependencies]
+test-case = "1"
