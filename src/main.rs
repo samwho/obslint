@@ -59,7 +59,7 @@ async fn main() -> Result<(), Error> {
 
     let all_links: BTreeSet<&str> = links
         .iter()
-        .flat_map(|(_, l)| l.iter().map(|s| *s))
+        .flat_map(|(_, l)| l.iter().copied())
         .filter(|l| !l.is_empty())
         .collect();
 
@@ -88,7 +88,7 @@ async fn main() -> Result<(), Error> {
             found.insert(&note.content[mat.start()..mat.end()]);
         }
 
-        let unlinked: Vec<&str> = found.difference(links).map(|s| *s).collect();
+        let unlinked: Vec<&str> = found.difference(links).copied().collect();
         if !unlinked.is_empty() {
             println!(
                 "{}: {}",
