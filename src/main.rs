@@ -4,7 +4,7 @@ use async_std::{fs::File, io::BufReader, prelude::*};
 use colored::*;
 use rayon::prelude::*;
 use std::{
-    collections::{BTreeSet, HashMap, HashSet},
+    collections::{BTreeSet, HashMap},
     hash::Hash,
     path::PathBuf,
 };
